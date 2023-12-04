@@ -1,0 +1,36 @@
+.sb-header {
+  background-color: var(--bs-indigo);
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+
+  h1 {
+    margin: 0;
+  }
+}
+
+.sb-header-container {
+  max-width: 800px;
+  color: white;
+  display: flex;
+  gap: 16px;
+}
+
+.sb-header-nav {
+  display: flex;
+  align-items: center;
+
+  ul {
+    display: flex;
+    gap: 16px;
+    margin: 0;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  a {
+    color: white;
+  }
+}
