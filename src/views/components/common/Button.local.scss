@@ -1,0 +1,32 @@
+.button {
+  font-family: var(--font-family-heading);
+  border: none;
+  padding: 12px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:active,
+  &:hover:active {
+    background-color: red;
+  }
+}
+
+.button-primary {
+  background-color: var(--color-primary-500);
+  color: white;
+
+  &:hover {
+    background-color: var(--color-primary-700);
+  }
+}
+
+.button-secondary {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.button-warning {
+  background-color: var(--color-warning);
+  color: black;
+}

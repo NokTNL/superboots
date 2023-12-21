@@ -11,20 +11,21 @@ export default async function compileLocalCss() {
     await fs.readdir(process.cwd() + "/src", {
       recursive: true,
     })
-  ).filter((fileName) => fileName.endsWith(".local.css"));
+  ).filter((fileName) => fileName.endsWith(".local.scss"));
 
   const fileFullPaths = filePaths.map(
     (filePath) => process.cwd() + "/src/" + filePath
   );
 
-  const fileContents = await Promise.all(
-    fileFullPaths.map(async (path) => (await fs.readFile(path)).toString())
+  const plainCSSFileContents = fileFullPaths.map(
+    (path) => sass.compile(path).css
   );
 
-  const fileContentsWithHashedClasses = fileContents.map((content, index) =>
-    content.replace(/(?<=\.)([a-zA-Z0-9_-]+)/g, (className) =>
-      c(className, url.pathToFileURL(fileFullPaths[index]).toString())
-    )
+  const fileContentsWithHashedClasses = plainCSSFileContents.map(
+    (content, index) =>
+      content.replace(/(?<=\.)([\w-]+(?=[\s\w-:]*{))/g, (className) =>
+        c(className, url.pathToFileURL(fileFullPaths[index]).toString())
+      )
   );
 
   const allCss = fileContentsWithHashedClasses.join("\n");

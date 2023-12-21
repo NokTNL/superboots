@@ -4,7 +4,7 @@ import c from "../../utils/css.js";
 export default function Header() {
   return html`
     <header class=${c("root", import.meta.url)}>
-      <h1>Superboots</h1>
+      <h1 class=${c("h1", import.meta.url)}>Superboots</h1>
       <nav>
         <ul class=${c("ul", import.meta.url)}>
           <li class=${c("li", import.meta.url)}><a href="/">Home</a></li>

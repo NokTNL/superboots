@@ -1,0 +1,24 @@
+.root {
+  display: flex;
+  background-color: var(--color-purple);
+  justify-content: center;
+  align-items: center;
+}
+
+.h1 {
+  color: white;
+  font-family: var(--font-family-heading);
+}
+
+.ul {
+  display: flex;
+  gap: 12px;
+}
+
+.li {
+  list-style: none;
+
+  a {
+    color: var(--color-light-grey);
+  }
+}

@@ -1,6 +1,9 @@
 @use "./colors.scss";
-@import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap");
+@use "./typography.scss";
+
+@import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Roboto&display=swap");
 
 :root {
-  font-family: "Gochi Hand", cursive;
+  font-family: var(--font-family-body);
+  color: var(--color-dark-grey);
 }

@@ -1,20 +1,55 @@
-.Article-root-08Agls {
+.Article-root-GS1vOh {
   padding: 24px;
-  color: red;
 }
-
-.Header-root-n4x85H {
+.Header-root-z-F5p1 {
   display: flex;
-  background-color: var(--color-pink);
+  background-color: var(--color-purple);
   justify-content: center;
   align-items: center;
 }
 
-.Header-ul-n4x85H {
+.Header-h1-W1_psU {
+  color: white;
+  font-family: var(--font-family-heading);
+}
+
+.Header-ul-ApTwIy {
   display: flex;
   gap: 12px;
 }
 
-.Header-li-n4x85H {
+.Header-li-vcrUzC {
   list-style: none;
+}
+.Header-li-vcrUzC a {
+  color: var(--color-light-grey);
+}
+.Button-button-E1H0ce {
+  font-family: var(--font-family-heading);
+  border: none;
+  padding: 12px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.button:active, .Button-button-E1H0ce:hover:active {
+  background-color: red;
+}
+
+.Button-button-primary-jCcfT8 {
+  background-color: var(--color-primary-500);
+  color: white;
+}
+.Button-button-primary-jCcfT8:hover {
+  background-color: var(--color-primary-700);
+}
+
+.Button-button-secondary-o_-wo_ {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.Button-button-warning-ve30ai {
+  background-color: var(--color-warning);
+  color: black;
 }
