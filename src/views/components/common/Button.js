@@ -6,18 +6,20 @@ import classNames from "classnames";
  * @typedef {Object} ButtonProps
  * @property {string=} children
  * @property {string=} variant
+ * @property {string=} attributes
  */
 
 /**
  * @param {ButtonProps} params0
  */
-export default function Button({ children = "", variant = "primary" }) {
-  return html`<button
-    class="${classNames(
-      c("button", import.meta.url),
-      c(`button-${variant}`, import.meta.url)
-    )}"
-  >
-    ${children}
-  </button>`;
+export default function Button({
+  children = "",
+  variant = "primary",
+  attributes = "",
+}) {
+  return html`
+    <button class="${classNames("button", `button-${variant}`)}" ${attributes}>
+      ${children}
+    </button>
+  `;
 }

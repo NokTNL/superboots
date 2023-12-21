@@ -24,32 +24,3 @@
 .Header-li-vcrUzC a {
   color: var(--color-light-grey);
 }
-.Button-button-E1H0ce {
-  font-family: var(--font-family-heading);
-  border: none;
-  padding: 12px;
-  font-size: 24px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-.button:active, .Button-button-E1H0ce:hover:active {
-  background-color: red;
-}
-
-.Button-button-primary-jCcfT8 {
-  background-color: var(--color-primary-500);
-  color: white;
-}
-.Button-button-primary-jCcfT8:hover {
-  background-color: var(--color-primary-700);
-}
-
-.Button-button-secondary-o_-wo_ {
-  background-color: var(--color-secondary);
-  color: white;
-}
-
-.Button-button-warning-ve30ai {
-  background-color: var(--color-warning);
-  color: black;
-}

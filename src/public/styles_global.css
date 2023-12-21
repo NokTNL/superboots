@@ -38,6 +38,36 @@
   font-size: 16px;
 }
 
+.button {
+  font-family: var(--font-family-heading);
+  border: none;
+  padding: 12px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.button:active, .button:hover:active {
+  background-color: red;
+}
+
+.button-primary {
+  background-color: var(--color-primary-500);
+  color: white;
+}
+.button-primary:hover {
+  background-color: var(--color-primary-700);
+}
+
+.button-secondary {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.button-warning {
+  background-color: var(--color-warning);
+  color: black;
+}
+
 :root {
   font-family: var(--font-family-body);
   color: var(--color-dark-grey);
