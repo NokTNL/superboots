@@ -1,17 +1,22 @@
 import bodyParser from "body-parser";
 import express from "express";
-import { engine } from "express-handlebars";
 import { fileURLToPath } from "url";
 import indexRoute from "./routes/index.js";
+import compileCss from "./scripts/compileCss.js";
+
+/**
+ * Compile CSS
+ */
+compileCss();
 
 const app = express();
-
-app.engine("handlebars", engine());
-app.set("view engine", "handlebars");
-app.set("views", fileURLToPath(new URL("views", import.meta.url)));
-
+/**
+ * Request body parser
+ */
 app.use(bodyParser.urlencoded({ extended: true }));
-
+/**
+ * Static file serving
+ */
 app.use(express.static(fileURLToPath(new URL("public", import.meta.url))));
 
 app.use(indexRoute);
