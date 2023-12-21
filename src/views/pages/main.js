@@ -1,15 +1,11 @@
 import { html } from "code-tag";
 import AppLayout from "../_app.js";
+import Article from "../components/Article.js";
 
 export default function IndexPage() {
   return AppLayout(
     html`
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-        recusandae consectetur provident facere cumque placeat incidunt
-        praesentium sapiente error, nam commodi explicabo molestias esse iure
-        accusamus fuga porro doloremque nisi.
-      </p>
+      ${Article()}
       <h1>Superboots</h1>
       <h2>Superboots</h2>
       <h3>Superboots</h3>

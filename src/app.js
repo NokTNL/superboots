@@ -2,12 +2,13 @@ import bodyParser from "body-parser";
 import express from "express";
 import { fileURLToPath } from "url";
 import indexRoute from "./routes/index.js";
-import compileCss from "./scripts/compileCss.js";
+import compileLocalCss, { compileSass } from "./scripts/compileCss.js";
 
 /**
  * Compile CSS
  */
-compileCss();
+compileLocalCss();
+compileSass();
 
 const app = express();
 /**

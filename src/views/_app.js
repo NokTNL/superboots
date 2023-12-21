@@ -16,7 +16,8 @@ export default function AppLayout(children) {
           href=" https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css "
           rel="stylesheet"
         />
-        <link href="styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="/styles_global.css" />
+        <link rel="stylesheet" href="/styles_local.css" />
       </head>
       <body>
         ${Header()} ${children}

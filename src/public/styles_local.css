@@ -1,0 +1,20 @@
+.Article-root-08Agls {
+  padding: 24px;
+  color: red;
+}
+
+.Header-root-n4x85H {
+  display: flex;
+  background-color: var(--color-pink);
+  justify-content: center;
+  align-items: center;
+}
+
+.Header-ul-n4x85H {
+  display: flex;
+  gap: 12px;
+}
+
+.Header-li-n4x85H {
+  list-style: none;
+}

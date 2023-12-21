@@ -1,23 +1,40 @@
 import chalk from "chalk";
 import fs from "fs/promises";
-import parseClass from "../utils/css.js";
+import c from "../utils/css.js";
 import url from "url";
+import * as sass from "sass";
 
-export default async function compileCss() {
+export default async function compileLocalCss() {
   console.info(chalk.blue("Compiling CSS..."));
 
-  const fileName = process.cwd() + "/src/views/components/Header.css";
+  const filePaths = (
+    await fs.readdir(process.cwd() + "/src", {
+      recursive: true,
+    })
+  ).filter((fileName) => fileName.endsWith(".local.css"));
 
-  const fileContent = (await fs.readFile(fileName)).toString();
-  const fileWithHashedClasses = fileContent.replace(
-    /(?<=\.)([a-zA-Z0-9_-]+)/g,
-    (className) => parseClass(className, url.pathToFileURL(fileName).toString())
+  const fileFullPaths = filePaths.map(
+    (filePath) => process.cwd() + "/src/" + filePath
   );
 
-  await fs.writeFile(
-    process.cwd() + "/src/public/styles.css",
-    fileWithHashedClasses
+  const fileContents = await Promise.all(
+    fileFullPaths.map(async (path) => (await fs.readFile(path)).toString())
   );
+
+  const fileContentsWithHashedClasses = fileContents.map((content, index) =>
+    content.replace(/(?<=\.)([a-zA-Z0-9_-]+)/g, (className) =>
+      c(className, url.pathToFileURL(fileFullPaths[index]).toString())
+    )
+  );
+
+  const allCss = fileContentsWithHashedClasses.join("\n");
+
+  await fs.writeFile(process.cwd() + "/src/public/styles_local.css", allCss);
 
   console.info(chalk.blue("CSS compilation complete!"));
+}
+
+export async function compileSass() {
+  const { css } = sass.compile("src/themes/_index.scss");
+  await fs.writeFile(process.cwd() + "/src/public/styles_global.css", css);
 }
