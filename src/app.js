@@ -2,6 +2,7 @@ import bodyParser from "body-parser";
 import express from "express";
 import { fileURLToPath } from "url";
 import indexRoute from "./routes/index.js";
+import aboutRoute from "./routes/about.js";
 import compileLocalCss, { compileSass } from "./scripts/compileCss.js";
 
 /**
@@ -20,6 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
  */
 app.use(express.static(fileURLToPath(new URL("public", import.meta.url))));
 
+app.use(aboutRoute);
 app.use(indexRoute);
 
 app.use((req, res, next) => {
